@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:'Merriweather', serif; ;
+            box-sizing: border-box;
+        }
+        .navigations{
+            width: 100%;
+            height: 130vh;
+            background-image: url(images/intr.avif);
+            background-size:cover;
+            background-position: center;   
+        }
+
+        nav{
+            display:flex;
+            align-items:center;
+            justify-content: space-between;
+            padding-top: 45px;
+            padding-right: 5%;
+            padding-left: 6%;
+            background-position: center;
+        }
+        .Logo{
+            color: black;
+            font-size: 35px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        span{
+            color:brown;
+        }
+
+        nav ul li{
+            list-style-type: none;
+            display: inline-block;
+            padding: 10px 25px;
+        }
+        nav ul li a{
+            color: black;
+            text-decoration:none;
+            font-weight: bold;
+            text-transform:capitalize;
+        }
+        nav ul li a:hover{
+            color: brown;
+            transition: .5s;
+        }
+        .btn{
+            color:black;
+            background-color: brown;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid transparent;
+            border-radius: 30px;
+           padding: 10px 25px;
+           transition: transform .4s;
+        }
+        .btn:hover{ 
+            transform: scale(1.1); 
+        }
+
+        .intro{
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+        }
+        h1{
+            color: black;
+            font-size: 60px;
+            margin: 20px 0px 20px;
+        }
+        h3{
+            color: black;
+            font-size: 25px;
+            margin-bottom:50px; 
+        }
+        h4{
+            color: rgb(168, 11, 11);
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+        .info form{
+              width: 390px;
+              max-width: 100%;
+              position: relative;
+        }
+
+        .info form input:first-child{
+            display: inline-block;
+            width:100%;
+            padding: 14px 130px 14px 15px;
+            border: 2px solid brown;
+            border-radius: 30px;
+            outline: none;
+        }
+        .info form input:last-child{
+            position: absolute;
+            border: none;
+            display: inline-block;
+            outline: none;
+            padding: 10px 30px;
+            border-radius: 30px;
+            background-color: brown;
+            color:black;
+            box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+            top: 6px;
+            right: 7px;
+        }
+        .about{
+            width: 100%;
+            padding: 100px 0px;
+            background-color: #191919;
+        }
+        .about img{
+            height: auto;
+            width: 430px;
+        }
+        .aboutText{
+            width: 550px;
+        }
+        .main{
+            width: 1130px;
+            max-width: 95%;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: space-around;
+            display: flex;
+        }
+        .aboutText h2{
+            color: white;
+            font-size: 70px;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+        .aboutText h5{
+            color: white;
+            letter-spacing: 2px;
+            font-size: 22px;
+            text-transform: capitalize;
+            margin-bottom: 25px;
+        }
+    .aboutText p{
+        color:rgba(236, 85, 186, 0.774);
+        letter-spacing: 1px;
+        line-height: 28px;
+        font-size: 18px;
+        margin-bottom: 45px;
+    }
+    button{
+        background-color: brown;
+        color: white;
+        border: 2px solid transparent;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 30px;
+        padding: 13px 30px;
+        transition: .4s;
+    }
+    button:hover{
+        background-color: transparent;
+        border: 2px solid brown;
+        cursor: pointer;
+    }
+    .education{
+        background-color: black;
+    }
+    .education img{
+        margin: 35px;
+        float: right;
+    
+    }
+    .educationText h2{
+        color: white;
+        font-size: 70px;
+        letter-spacing: 2px;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+        
+    }
+    .educationText p{
+        color: white;  
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .Main{
+        width: 1130px;
+            max-width: 95%;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: space-around;
+            display: flex;
+    }
+
+    .skills{
+        background-color: #101010;
+        width: 100%;
+        padding: 100px 0px;
+    }
+    .title h2{
+        color: white;
+        font-size: 75px;
+        width: 1130px;
+        margin: 30px auto;
+        text-align: center;
+    }
+    .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 400px;
+    }
+    .card{
+        height: 365px;
+        width: 335px;
+        padding: 20px 35px;
+        background: #191919;
+        border-radius: 20px;
+        margin: 15px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+    }
+    .card i{
+        font-size: 50px;
+        color: brown;
+        display: block;
+        text-align: center;
+        margin: 25px 0px;
+    }
+    h5{
+        color: white;
+        font-size: 23px;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+
+    }
+
+    .pra p{
+        color: #fcfc;
+        font-size: 16px;
+        line-height: 27px;
+        margin-bottom: 25px;
+    }
+
+    .card .button{
+        background-color: brown;
+        color: white;
+        border: 2px solid transparent;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 30px;
+        padding: 9px 22px;
+        transition: .4s;
+    }
+
+    .card .button:hover{
+        background-color: transparent;
+        border: 2px solid brown;
+        cursor: pointer;
+    }
+   
+    .contact{
+        width: 100%;
+        height: 580px;
+        background: #191919;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 60px;
+    }
+    .contact p{
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+
+    .contact .button-2{
+        background-color: brown;
+        color: white;
+        border: 2px solid transparent;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 30px;
+        padding: 9px 22px;
+        transition: .4s; 
+    }
+    .contact .button-2:hover{
+        background-color: transparent;
+        border: 1px solid brown;
+        cursor: pointer;
+    }
+
+    input[type="text"],input[type="email"], textarea{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid brown;
+        border-radius: 5px;
+    }
+    label{
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        padding-top: 5px;
+        color: aliceblue;
+    }
+    .form{
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+    }
+
+    footer{
+        position: relative;
+        width: 100%;
+        height: 400px;
+        background: #101010;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    footer p:nth-child(1){
+        font-size: 30px;
+        color: white;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    footer p:nth-child(2){
+        color: white;
+        font-size: 17px;
+        width: 500px;
+        text-align: center;
+        line-height: 26px;
+    }
+    .social{
+        display: flex
+    }
+    .social a{
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: brown;
+        border-radius: 50%;
+        margin: 22px 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .social a:hover{
+        transform: scale(1.2);
+        transition: .3s;
+    }
+    .end{
+        position: absolute;
+        color: brown;
+        bottom: 35px;
+        font-size: 14px;
+    }
+   
+    
+
+
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Passions+Conflict&family=Red+Hat+Display&family=Sacramento&display=swap');
+    </style>
+    <title>Portfolio Website</title>
+</head>
+<body>
+    <!--navigation and Intro-->
+    <section class="navigations">
+        <nav >
+            <h2 class="Logo">Portfo<span>lio</span></h2>
+            <ul>
+                <li><a href="#About">About Me</a></li>
+                <li><a href="#Education" >Education</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Contact">Contact Me</a></li>
+            </ul>
+            <a href="#" class="btn">Subscribe</a>
+        </nav>
+        <section  class="intro">
+            <h4>Hi, This is</h4>
+             <h1>Sohaib <span>Akhtar</span></h1>
+             <h3>I am Front End developer.</h3>
+             <section class="info">
+                <form >
+                    <input type="email" name="email" id="email" placeholder="Enter your Email">
+                    <input type="submit" value="Lets begin" >
+                </form>
+             </section>
+        </section>
+    </section>
+
+    <!--About us Section-->
+    <section id="About" class="about">
+        <div class="main">
+            <img src="images/trac.jpg" alt="My pic">
+            <div class="aboutText">
+                <h2>About Me</h2>
+                <h5>Front <span>End Developer</span></h5>
+                <p>I have started my journey of Front-end web development. I have completed HTML5 and have done 
+                    two projects that involve HTML and inline CSS and now passionate
+                    about CSS. IA this project will boost up my morale. I have learned alot from it.I am making this website with the help of HTML and Internal CSS. Hope so I will complete it in the best possible way.
+                </p>
+                <button type="button">Let's Talk</button>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="Education" class="education">
+        <div class="Main">
+            <img src="images/UET.png" alt="UET LOGO">
+            <div class="educationText">
+                <h2>My Educa<span>tion</span></h2>
+                <p>I have completed my early eduaction from my village. Then I moved to Military College Murree 
+                    & completed my matric and FSC. After completion of my college I took admission in BS Computer Science
+                    at UET, Peshawar.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--------Skills-->
+
+   <div id="Skills" class="skills">
+    <div class="title">
+       <h2><Span>S</Span>kills</h2>
+    </div>
+    <div class="box">
+      <div class="card">
+        <i class="fa-brands fa-css3-alt"></i>
+        <h5>HTML | CSS</h5>
+        <div class="pra">
+          <p>Websites with beautiful background and designs are made with the combination of HTML & CSS.
+          </p>
+
+          <p style="text-align: center;">
+            <a class="button" href="#">Read more</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fa-brands fa-java"></i>
+        <h5>Java</h5>
+        <div class="pra">
+          <p>Java is Class based Object Oriented Language.It is also used in Web Programming and Apps. Lets Start!!!
+          </p>
+
+          <p style="text-align: center;">
+            <a class="button" href="#">Read more</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-code"></i>
+        <h5>C++</h5>
+        <div class="pra">
+          <p>C++ is Object Oriented Language & is found in OS. It will be interesting learning C++ as it makes our base.
+          </p>
+
+          <p style="text-align: center;">
+            <a class="button" href="#">Read more</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+   </div>
+
+        <!--Contact me-->
+        <div id="Contact" class="contact">
+            <p>Let me get you a beautiful website.</p>
+            <a class="button-2" href="#">Hire ME</a> <br>
+        <div class="form">
+           
+            <form action="">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" required placeholder="Enter Your Name">
+                
+                <label for="email">E-mail: </label>
+                <input type="email" name="email" id="email" required placeholder="Enter Your Email">
+
+                <label for="message">Message: </label>
+                <textarea name="message" id="message" required placeholder="Your Message"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        </div>
+    
+  <!-----Footer----->
+  <footer>
+    <p>Sohaib Akhtar</p>
+    <p>For more HTML | CSS info --- join me by clicking below</p>
+    <div class="social">
+        <a href="https://www.facebook.com/settings?tab=account&section=username"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/invites/contact/?i=15twtyam847p5&utm_content=cdfxhfo"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></i></a>
+    </div>
+    <p class="end">Copyright by Sohaib Akhtar</p>
+  </footer>
+
+</body>
+</html>
